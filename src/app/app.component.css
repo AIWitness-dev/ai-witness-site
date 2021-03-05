@@ -1,0 +1,98 @@
+.header{
+    height:100px;
+    background-color: #26292b;
+  }
+  #logo{
+    margin-left:30px;
+    float: left;
+  }
+  .ai-head{
+    margin-top:50px;
+    color: white;
+    size: 120px;
+    font-size: 25px;
+    font-weight: 400;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    font-family: fantasy;
+    font-size: 30px;
+  }
+  
+  nav {
+    margin-top:10px;
+    background-color: #26292b;
+  }
+  nav a {
+    padding-left:10px;
+    padding-right: 50px;
+    padding-top: 10px ;
+    padding-bottom: 10px;
+    text-decoration: none;
+    display: inline-block;
+    background-color: #26292b;
+    font-size: 18px;
+  }
+  nav a:visited, a:link {
+    color: white;
+  }
+  nav a:hover {
+    color: #26292b;
+    background-color: #CFD8DC;
+  }
+  nav a.active {
+    color: #26292b;
+  
+  }
+  .profile{
+    position: absolute;
+    top: 30px;
+    right: 140px;
+  }
+  .setting{
+    position: absolute;
+    top: 30px;
+    right: 90px;
+  }
+  .logout{
+    position: absolute;
+    top: 30px;
+    right: 40px;
+  }
+  .subscriptions{
+    position: absolute;
+    top: 30px;
+    right: 190px;
+  }
+  .drop-icon {
+    border-radius: 50%;
+    color: white;
+    background:  #26292b;
+  
+  }
+  /* Note: If you're using an SVG icon, you should make the class target the `<svg>` element */
+  .drop-icon svg {
+    fill: white;
+  }
+  .text {
+    align-self: center;
+    color: white;
+    font-size: 13px;
+  }
+  
+  .icon {
+    border-radius: 50%;
+    color: #26292b;
+    background: white;
+  
+  }
+  body{
+    max-width: 100%;
+    height: auto;
+    background-image: url('/assets/images/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+

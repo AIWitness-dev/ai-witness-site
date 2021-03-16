@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-res-image',
-  templateUrl: './res-image.component.html',
-  styleUrls: ['./res-image.component.css']
+  selector: 'app-about',
+  templateUrl: './about.component.html',
+  styleUrls: ['./about.component.css']
 })
-export class ResImageComponent implements OnInit {
+export class AboutComponent implements OnInit {
 
   constructor(public router: Router ) { }
 

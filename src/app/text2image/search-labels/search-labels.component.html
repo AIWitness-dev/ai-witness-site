@@ -1,107 +1,137 @@
-<div class="message-label">
-    <p>Select the labels that fits your target.</p>
-</div>
+<div>
+    <ul>
+      <li><img src="assets/images/logo.png"></li>
+      <li><a (click)="goToIntro();">Home</a></li>
+      <li><a class="active" (click)="goToApp();">App</a></li>
+      <li><a (click)="goToAbout();">About</a></li>
+    </ul>
+  </div>
+  
+  <div>
+    <img src="assets/images/background.png" alt="background">
+  </div>
+  
+  
+  <div class="main">
+    <div class="generate">
+      <div class="section-title">
+        <p>Try AIWitness - Step 2: Provide Labels</p>
+      </div>
+      <p>Select the labels that fits your target.</p>
 
-<mat-list role="list">
-    <mat-list-item role="listitem">
-        <mat-form-field appearance="fill">
-            <mat-label>Gender</mat-label>
-            <mat-select>
-              <mat-option value="female">Female</mat-option>
-              <mat-option value="male">Male</mat-option>
-            </mat-select>
-        </mat-form-field>
-    </mat-list-item>
-
-    <mat-list-item role="listitem">
-        <mat-form-field appearance="fill">
-            <mat-label>Hair Color</mat-label>
-            <mat-select>
-              <mat-option value="black">Black</mat-option>
-              <mat-option value="grey">Grey</mat-option>
-              <mat-option value="blonde">Blonde</mat-option>
-              <mat-option value="brown">Brown</mat-option>
-            </mat-select>
-        </mat-form-field>
-    </mat-list-item>
-
-    <mat-list-item role="listitem">
-        <mat-form-field appearance="fill">
-            <mat-label>Hair Length</mat-label>
-            <mat-select>
-              <mat-option value="short">Short</mat-option>
-              <mat-option value="long">Long</mat-option>
-            </mat-select>
-        </mat-form-field>
-    </mat-list-item>
-
-    <mat-list-item role="listitem">
-        <mat-form-field appearance="fill">
-            <mat-label>Hair Style</mat-label>
-            <mat-select>
-              <mat-option value="straight">Straight</mat-option>
-              <mat-option value="Curvy">Curvy</mat-option>
-            </mat-select>
-        </mat-form-field>
-    </mat-list-item>
-
-    <mat-list-item role="listitem">
-        <mat-form-field appearance="fill">
-            <mat-label>Age</mat-label>
-            <mat-select>
-              <mat-option value="young">Young</mat-option>
-              <mat-option value="old">Old</mat-option>
-            </mat-select>
-        </mat-form-field>
-    </mat-list-item>
-
-</mat-list>
-
-<!-- <mat-list>
-    <mat-list-item> 
-        <p>Gender</p> 
-        <mat-radio-group>
-            <mat-radio-button value="female">Female</mat-radio-button>
-            <mat-radio-button value="male">Male</mat-radio-button>
-        </mat-radio-group>
-    </mat-list-item>
-
-    <mat-list-item> 
-        <p>Hair Color</p>
-        <mat-radio-group>
-            <mat-radio-button value="black">Black</mat-radio-button>
-            <mat-radio-button value="blonde">Blonde</mat-radio-button>
-            <mat-radio-button value="white">White</mat-radio-button>
-            <mat-radio-button value="brown">Brown</mat-radio-button>
-        </mat-radio-group>
-    </mat-list-item>
-
-    <mat-list-item> 
-        <p>Hair Length</p>
-        <mat-radio-group>
-            <mat-radio-button value="long">Long</mat-radio-button>
-            <mat-radio-button value="short">Short</mat-radio-button>
-        </mat-radio-group>
-    </mat-list-item>
-
-    <mat-list-item> 
-        <p>Hair Style</p>
-        <mat-radio-group>
-            <mat-radio-button value="straight">Straight</mat-radio-button>
-            <mat-radio-button value="curvy">Curvy</mat-radio-button>
-        </mat-radio-group>
-    </mat-list-item>
-
-    <mat-list-item> 
-        <p>Ages</p> 
-        <mat-radio-group>
-            <mat-radio-button value="young">Young</mat-radio-button>
-            <mat-radio-button value="old">Old</mat-radio-button>
-        </mat-radio-group>
-    </mat-list-item>
-</mat-list> -->
-
-
-<button type="button" class="btn btn-primary-outline pull-left" (click)="btnClick();"><i class="fa fa-plus"></i> Previous</button>  
-
-<button type="button" class="btn btn-primary-outline pull-right" (click)="btnSubmit();"><i class="fa fa-plus"></i>Submit</button>  
+      
+      <mat-list role="list">
+          <mat-list-item role="listitem">
+              <mat-form-field appearance="fill">
+                  <mat-label>Gender</mat-label>
+                  <mat-select>
+                    <mat-option value="female">Female</mat-option>
+                    <mat-option value="male">Male</mat-option>
+                  </mat-select>
+              </mat-form-field>
+          </mat-list-item>
+      
+          <mat-list-item role="listitem">
+              <mat-form-field appearance="fill">
+                  <mat-label>Hair Color</mat-label>
+                  <mat-select>
+                    <mat-option value="black">Black</mat-option>
+                    <mat-option value="grey">Grey</mat-option>
+                    <mat-option value="blonde">Blonde</mat-option>
+                    <mat-option value="brown">Brown</mat-option>
+                  </mat-select>
+              </mat-form-field>
+          </mat-list-item>
+      
+          <mat-list-item role="listitem">
+              <mat-form-field appearance="fill">
+                  <mat-label>Hair Length</mat-label>
+                  <mat-select>
+                    <mat-option value="short">Short</mat-option>
+                    <mat-option value="long">Long</mat-option>
+                  </mat-select>
+              </mat-form-field>
+          </mat-list-item>
+      
+          <mat-list-item role="listitem">
+              <mat-form-field appearance="fill">
+                  <mat-label>Hair Style</mat-label>
+                  <mat-select>
+                    <mat-option value="straight">Straight</mat-option>
+                    <mat-option value="Curvy">Curvy</mat-option>
+                  </mat-select>
+              </mat-form-field>
+          </mat-list-item>
+      
+          <mat-list-item role="listitem">
+              <mat-form-field appearance="fill">
+                  <mat-label>Age</mat-label>
+                  <mat-select>
+                    <mat-option value="young">Young</mat-option>
+                    <mat-option value="old">Old</mat-option>
+                  </mat-select>
+              </mat-form-field>
+          </mat-list-item>
+      
+      </mat-list>
+      
+      <!-- <mat-list>
+          <mat-list-item> 
+              <p>Gender</p> 
+              <mat-radio-group>
+                  <mat-radio-button value="female">Female</mat-radio-button>
+                  <mat-radio-button value="male">Male</mat-radio-button>
+              </mat-radio-group>
+          </mat-list-item>
+      
+          <mat-list-item> 
+              <p>Hair Color</p>
+              <mat-radio-group>
+                  <mat-radio-button value="black">Black</mat-radio-button>
+                  <mat-radio-button value="blonde">Blonde</mat-radio-button>
+                  <mat-radio-button value="white">White</mat-radio-button>
+                  <mat-radio-button value="brown">Brown</mat-radio-button>
+              </mat-radio-group>
+          </mat-list-item>
+      
+          <mat-list-item> 
+              <p>Hair Length</p>
+              <mat-radio-group>
+                  <mat-radio-button value="long">Long</mat-radio-button>
+                  <mat-radio-button value="short">Short</mat-radio-button>
+              </mat-radio-group>
+          </mat-list-item>
+      
+          <mat-list-item> 
+              <p>Hair Style</p>
+              <mat-radio-group>
+                  <mat-radio-button value="straight">Straight</mat-radio-button>
+                  <mat-radio-button value="curvy">Curvy</mat-radio-button>
+              </mat-radio-group>
+          </mat-list-item>
+      
+          <mat-list-item> 
+              <p>Ages</p> 
+              <mat-radio-group>
+                  <mat-radio-button value="young">Young</mat-radio-button>
+                  <mat-radio-button value="old">Old</mat-radio-button>
+              </mat-radio-group>
+          </mat-list-item>
+      </mat-list> -->
+      
+      
+      <button type="button" class="submitbutton" (click)="btnClick();">Previous</button>  
+      
+      <button type="button" class="submitbutton" (click)="btnSubmit();">Submit</button>  
+      
+    </div>
+  </div>
+  
+  <div class="footer">
+    <div class="container">
+      <p  class="footertitle">AIWitness</p>
+      <div class="center">
+        <button class="footerbutton" (click)="goToAbout();">LEARN MORE ABOUT US</button>
+      </div>
+    </div>
+  </div>

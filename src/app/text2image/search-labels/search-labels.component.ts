@@ -29,4 +29,14 @@ export class SearchLabelsComponent implements OnInit {
     this.router.navigateByUrl('/res-images');
   };
 
+  goToIntro=  () => {
+    this.router.navigateByUrl('/intro');
+  };
+  goToApp=  () => {
+    this.router.navigateByUrl('/description');
+  };
+  goToAbout=  () => {
+    this.router.navigateByUrl('/about');
+  };
+
 }

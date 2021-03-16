@@ -22,5 +22,13 @@ export class DescriptionsComponent implements OnInit {
   btnClick=  () => {
     this.router.navigateByUrl('/search-labels');
 };
-
+  goToIntro=  () => {
+  this.router.navigateByUrl('/intro');
+};
+  goToApp=  () => {
+  this.router.navigateByUrl('/description');
+};
+  goToAbout=  () => {
+  this.router.navigateByUrl('/about');
+};
 }

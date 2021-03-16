@@ -1,0 +1,39 @@
+<div>
+    <ul>
+      <li><img src="assets/images/logo.png"></li>
+      <li><a class="active" (click)="goToIntro();">Home</a></li>
+      <li><a (click)="goToApp();">App</a></li>
+      <li><a (click)="goToAbout();">About</a></li>
+    </ul>
+  </div>
+  
+  <div>
+    <img src="assets/images/background.png" alt="background">
+  </div>
+
+  <div class="main">
+    <div class="title">
+        <p>AIWitness</p>
+    </div>
+    <p> &nbsp;&nbsp;&nbsp;&nbsp; In application areas such as crime detection or anti-terrorism evasion, the photos of criminal suspects are often not directly available. Usually, a simulated portrait is obtained through the cooperation of witnesses and painters and then retrieved in the existing photo database to confirm the identity of the suspect. The objective of AIWitness is to provide an AI solution to assist the police during investigation and help to identify suspect individuals more efficiently. </p>
+    <p> &nbsp;&nbsp;&nbsp;&nbsp; AIWitness is an application that leverages natural language processing and artificial intelligence to power a conversation-based mechanism that enables witnesses to describe the appearance of criminal suspects, which returns an AI-generated image based on that information and starts automatically image-matching search in the database. It provides portrait result in addition to plain text description which can significantly reduce the manual effort spent on searching the criminal suspect.</p>
+  </div>
+
+
+  <div class="tryapp">
+    <p class="trytext">NOW TRY IT YOURSELF</p>
+    <div class="lowercontainer">
+      <div class="center">
+        <button (click)="goToApp();">TRY THE APP  ></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="container">
+      <p  class="footertitle">AIWitness</p>
+      <div class="center">
+        <button class="footerbutton" (click)="goToAbout();">LEARN MORE ABOUT US</button>
+      </div>
+    </div>
+  </div>

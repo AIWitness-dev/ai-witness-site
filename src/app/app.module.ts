@@ -22,6 +22,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { FormsModule } from '@angular/forms';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
+import { IntroComponent } from './intro/intro.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import {MatRadioModule} from '@angular/material/radio';
     DescriptionsComponent,
     SearchLabelsComponent,
     ResImageComponent,
-    MatchedImagesListComponent
+    MatchedImagesListComponent,
+    IntroComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

@@ -19,115 +19,129 @@
       </div>
       <p>Select the labels that fits your target.</p>
 
-      
-      <mat-list role="list">
-          <mat-list-item role="listitem">
-              <mat-form-field appearance="fill">
-                  <mat-label>Gender</mat-label>
-                  <mat-select>
-                    <mat-option value="female">Female</mat-option>
-                    <mat-option value="male">Male</mat-option>
-                  </mat-select>
-              </mat-form-field>
-          </mat-list-item>
-      
-          <mat-list-item role="listitem">
-              <mat-form-field appearance="fill">
-                  <mat-label>Hair Color</mat-label>
-                  <mat-select>
-                    <mat-option value="black">Black</mat-option>
-                    <mat-option value="grey">Grey</mat-option>
-                    <mat-option value="blonde">Blonde</mat-option>
-                    <mat-option value="brown">Brown</mat-option>
-                  </mat-select>
-              </mat-form-field>
-          </mat-list-item>
-      
-          <mat-list-item role="listitem">
-              <mat-form-field appearance="fill">
-                  <mat-label>Hair Length</mat-label>
-                  <mat-select>
-                    <mat-option value="short">Short</mat-option>
-                    <mat-option value="long">Long</mat-option>
-                  </mat-select>
-              </mat-form-field>
-          </mat-list-item>
-      
-          <mat-list-item role="listitem">
-              <mat-form-field appearance="fill">
-                  <mat-label>Hair Style</mat-label>
-                  <mat-select>
-                    <mat-option value="straight">Straight</mat-option>
-                    <mat-option value="Curvy">Curvy</mat-option>
-                  </mat-select>
-              </mat-form-field>
-          </mat-list-item>
-      
-          <mat-list-item role="listitem">
-              <mat-form-field appearance="fill">
-                  <mat-label>Age</mat-label>
-                  <mat-select>
-                    <mat-option value="young">Young</mat-option>
-                    <mat-option value="old">Old</mat-option>
-                  </mat-select>
-              </mat-form-field>
-          </mat-list-item>
-      
-      </mat-list>
-      
-      <!-- <mat-list>
-          <mat-list-item> 
-              <p>Gender</p> 
-              <mat-radio-group>
-                  <mat-radio-button value="female">Female</mat-radio-button>
-                  <mat-radio-button value="male">Male</mat-radio-button>
-              </mat-radio-group>
-          </mat-list-item>
-      
-          <mat-list-item> 
-              <p>Hair Color</p>
-              <mat-radio-group>
-                  <mat-radio-button value="black">Black</mat-radio-button>
-                  <mat-radio-button value="blonde">Blonde</mat-radio-button>
-                  <mat-radio-button value="white">White</mat-radio-button>
-                  <mat-radio-button value="brown">Brown</mat-radio-button>
-              </mat-radio-group>
-          </mat-list-item>
-      
-          <mat-list-item> 
-              <p>Hair Length</p>
-              <mat-radio-group>
-                  <mat-radio-button value="long">Long</mat-radio-button>
-                  <mat-radio-button value="short">Short</mat-radio-button>
-              </mat-radio-group>
-          </mat-list-item>
-      
-          <mat-list-item> 
-              <p>Hair Style</p>
-              <mat-radio-group>
-                  <mat-radio-button value="straight">Straight</mat-radio-button>
-                  <mat-radio-button value="curvy">Curvy</mat-radio-button>
-              </mat-radio-group>
-          </mat-list-item>
-      
-          <mat-list-item> 
-              <p>Ages</p> 
-              <mat-radio-group>
-                  <mat-radio-button value="young">Young</mat-radio-button>
-                  <mat-radio-button value="old">Old</mat-radio-button>
-              </mat-radio-group>
-          </mat-list-item>
-      </mat-list> -->
-      
-      
-      <button type="button" class="submitbutton" (click)="btnClick();">Previous</button>  
-      
-      <button type="button" class="submitbutton" (click)="btnSubmit();">Submit</button>  
-      
-    </div>
-  </div>
-  
-  <div class="footer">
+<mat-list role="list">
+    <mat-list-item role="listitem">
+        <mat-form-field appearance="fill">
+            <mat-label>What is the color of the person's hair?</mat-label>
+            <mat-select [(value)]="default" (selectionChange)="selectChange($event.value)">
+                <mat-option *ngFor="let option of hair_options" [value]="option" >
+                    {{option}}
+                  </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+    </mat-list-item>
+
+    <mat-list-item role="listitem">
+        <mat-form-field appearance="fill">
+            <mat-label>Is this person's hair wavy or straight?</mat-label>
+            <mat-select [(value)]="default" (selectionChange)="selectChange($event.value)">
+              <mat-option value="straight">straight hair</mat-option>
+              <mat-option value="wavy">wavy hair</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </mat-list-item>
+
+    <mat-list-item role="listitem">
+        <mat-form-field appearance="fill">
+            <mat-label>Does the person has big lips?</mat-label>
+            <mat-select [(value)]="default" (selectionChange)="selectChange($event.value)">
+              <mat-option value="lipsy">Yes</mat-option>
+              <mat-option value="lipsn">No</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </mat-list-item>
+
+    <mat-list-item role="listitem">
+        <mat-form-field appearance="fill">
+            <mat-label>Does the person has big nose?</mat-label>
+            <mat-select [(value)]="default" (selectionChange)="selectChange($event.value)"> 
+              <mat-option value="nosey">Yes</mat-option>
+              <mat-option value="nosen">No</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </mat-list-item>
+
+    <mat-list-item role="listitem">
+        <mat-form-field appearance="fill">
+            <mat-label>Does the person has double chin?</mat-label>
+            <mat-select [(value)]="default" (selectionChange)="selectChange($event.value)">
+              <mat-option value="chiny">Yes</mat-option>
+              <mat-option value="chinn">No</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </mat-list-item>
+
+    <mat-list-item role="listitem">
+        <mat-form-field appearance="fill">
+            <mat-label>Does the person has eye glasses?</mat-label>
+            <mat-select [(value)]="default" (selectionChange)="selectChange($event.value)">
+              <mat-option value="glassesy">Yes</mat-option>
+              <mat-option value="glassesn">No</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </mat-list-item>
+
+    <mat-list-item role="listitem">
+        <mat-form-field appearance="fill">
+            <mat-label>Is the person a male?</mat-label>
+            <mat-select [(value)]="default" (selectionChange)="selectChange($event.value)">
+              <mat-option value="female">No</mat-option>
+              <mat-option value="male">Yes</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </mat-list-item>
+
+    <mat-list-item role="listitem">
+        <mat-form-field appearance="fill">
+            <mat-label>Does the person has beard?</mat-label>
+            <mat-select [(value)]="default" (selectionChange)="selectChange($event.value)">
+              <mat-option value="beardy">Yes</mat-option>
+              <mat-option value="beardn">No</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </mat-list-item>
+
+    <mat-list-item role="listitem">
+        <mat-form-field appearance="fill">
+            <mat-label>Does the person has pale skin?</mat-label>
+            <mat-select [(value)]="default" (selectionChange)="selectChange($event.value)">
+              <mat-option value="skiny">Yes</mat-option>
+              <mat-option value="skinn">No</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </mat-list-item>
+
+    <mat-list-item role="listitem">
+        <mat-form-field appearance="fill">
+            <mat-label>Does the person has receding hairline?</mat-label>
+            <mat-select [(value)]="default" (selectionChange)="selectChange($event.value)">
+              <mat-option value="recey">Yes</mat-option>
+              <mat-option value="recn">No</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </mat-list-item>
+
+    <mat-list-item role="listitem">
+        <mat-form-field appearance="fill">
+            <mat-label>How old is the person?</mat-label>
+            <mat-select [(value)]="default" (selectionChange)="selectChange($event.value)">
+              <mat-option value="young">young</mat-option>
+              <mat-option value="old">old</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </mat-list-item>
+
+</mat-list>
+
+<button type="button" class="previousbutton" (click)="btnClick();"><i class="fa fa-plus"></i> Previous</button>  
+
+<button type="button" class="submitbutton" (click)="btnSubmit();"><i class="fa fa-plus"></i>Submit</button>  
+
+</div>
+</div>
+
+<div class="footer">
     <div class="container">
       <p  class="footertitle">AIWitness</p>
       <div class="center">

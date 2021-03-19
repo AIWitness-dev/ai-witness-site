@@ -1,1 +1,39 @@
-<p>matched-images-list works!</p>
+<div>
+    <ul>
+      <li><img src="assets/images/logo.png"></li>
+      <li><a (click)="goToIntro();">Home</a></li>
+      <li><a class="active" (click)="goToApp();">App</a></li>
+      <li><a (click)="goToAbout();">About</a></li>
+    </ul>
+  </div>
+  <div>
+    <img src="assets/images/background.png" alt="background">
+  </div>
+  
+  
+  <div class="main">
+    <div class="section-title">
+        <p>Try AIWitness - Step 3: Image Result</p>
+    </div>
+    
+    <button type="button" class="genbutton" (click)="btnClick();"><i class="fa fa-plus"></i> Review Image : {{res_id}}</button>    
+    <!-- <img src="base64data" alt="Image result">   -->
+    <div class = "review">
+        <img [src]="imageToShow"
+            *ngIf="!isImageLoading; else noImageFound">
+    <ng-template #noImageFound>
+        <h2>Please Hold</h2>
+    </ng-template>
+    </div>
+    <button type="button" class="submitbutton" (click)="goToApp();">Try Again</button> 
+  </div>
+  
+  
+  <div class="footer">
+    <div class="container">
+      <p  class="footertitle">AIWitness</p>
+      <div class="center">
+        <button class="footerbutton" (click)="goToAbout();">LEARN MORE ABOUT US</button>
+      </div>
+    </div>
+  </div>

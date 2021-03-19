@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { DescriptionsComponent } from './text2image/descriptions/descriptions.component';
 import { SearchLabelsComponent } from './text2image/search-labels/search-labels.component';
-import { ResImageComponent } from './text2image/images/res-image/res-image.component';
 import { MatchedImagesListComponent } from './text2image/images/matched-images-list/matched-images-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
@@ -22,8 +21,14 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { FormsModule } from '@angular/forms';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
-import { IntroComponent } from './intro/intro.component';
+import { HttpClientModule } from '@angular/common/http';
+
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { environment } from '../environments/environment';
 import { AboutComponent } from './about/about.component';
+import { IntroComponent } from './intro/intro.component';
 
 @NgModule({
   declarations: [
@@ -31,10 +36,9 @@ import { AboutComponent } from './about/about.component';
     HomeComponent,
     DescriptionsComponent,
     SearchLabelsComponent,
-    ResImageComponent,
     MatchedImagesListComponent,
-    IntroComponent,
-    AboutComponent
+    AboutComponent,
+    IntroComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +56,11 @@ import { AboutComponent } from './about/about.component';
     MatButtonModule,
     MatTooltipModule,
     MatCheckboxModule,
-    MatRadioModule
+    MatRadioModule,
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,7 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase:{
+    apiKey: "AIzaSyA6I8WedQ3mvfTuXr89UYgutfrKRBfVPEc",
+    authDomain: "ai-witness.firebaseapp.com",
+    databaseURL: "https://ai-witness-default-rtdb.firebaseio.com",
+    projectId: "ai-witness",
+    storageBucket: "ai-witness.appspot.com",
+    messagingSenderId: "616511884811",
+    appId: "1:616511884811:web:4e073b58351ef0aebe410e",
+    measurementId: "G-86CEK50MC6"
+  }
 };
 
 /*
@@ -14,3 +24,4 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional

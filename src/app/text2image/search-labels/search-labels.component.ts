@@ -1,13 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,  Output, EventEmitter} from '@angular/core';
 import { Router } from '@angular/router';
-import {ThemePalette} from '@angular/material/core';
-
-export interface Task {
-  name: string;
-  completed: boolean;
-  color: ThemePalette;
-  subtasks?: Task[];
-}
+import { FeatureSearchService } from './feature-search.service';
+import { MongoSearchService} from './mongo-search.service';
+import {ResImageService}  from '../images/res-image.service'
 
 @Component({
   selector: 'app-search-labels',
@@ -15,8 +10,26 @@ export interface Task {
   styleUrls: ['./search-labels.component.css']
 })
 export class SearchLabelsComponent implements OnInit {
+  public hair_options: string[]=[
+   'black',
+   'blond',
+   'bald',
+   'grey',
+   'brown'
+  ]
+  public default = 'null';
 
-  constructor(public router: Router ) { }
+  public selectedFields:string[]= [];
+  image_list:any;
+  object:any;
+
+  @Output() valueChange = new EventEmitter();
+
+  constructor(
+    public router: Router,
+    private queryGen: FeatureSearchService ,
+    private mongo:MongoSearchService,
+    private imageService: ResImageService) { }
 
   ngOnInit(): void {
   }
@@ -25,8 +38,14 @@ export class SearchLabelsComponent implements OnInit {
     this.router.navigateByUrl('/description');
   };
 
+  selectChange(value: string) {
+    //In my case $event come with a id value
+    this.selectedFields.push(value);
+  }
+
   btnSubmit=  () => {
-    this.router.navigateByUrl('/res-images');
+    this.object = this.queryGen.queryGenerator(this.selectedFields);
+    this.router.navigateByUrl('/matched-images', { state: this.object});
   };
 
   goToIntro=  () => {

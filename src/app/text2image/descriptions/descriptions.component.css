@@ -63,7 +63,7 @@ button {
   font-family: Helvetica;
   transition-duration: 0.4s;
   cursor: pointer;
-  width: 150%;
+  width: 350px;
 }
 button:hover {
   background-color:#111;
@@ -141,4 +141,8 @@ textarea{
   font-style: italic;
   margin-left: 5%;
   text-decoration-line: underline;
+}
+.review{
+  padding: 5px;
+  width: 300px;
 }

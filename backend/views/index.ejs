@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <style>
+    img {
+      width: 100%;
+    }
+  </style>
+  <title>Mongo File Uploads</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 m-auto">
+        <h1 class="text-center display-4 my-4">AIWitness</h1>
+
+        <div class="div">
+            <form action="/files" method="GET" enctype="multipart/form-data">
+                <label for="hair">What is the color of the person's hair?</label>
+                <select name="hair" class="hair" id="hair">
+                    <option value="">--Please choose an option--</option>
+                    <option value="black">black</option>
+                    <option value="blond">blond</option>
+                    <option value="bald">bald</option>
+                    <option value="grey">grey</option>
+                    <option value="brown">brown</option>
+                </select>
+
+                <label for="straightHair">Is this person's hair wacy or straight?</label>
+                <select name="straightHair" class="straightHair" id="straightHair">
+                    <option value="">--Please choose an option--</option>
+                    <option value="straightHair">straight hair</option>
+                    <option value="wavyHair">wavy Hair</option>
+                </select>
+
+                <label for="bigLips">Does the person has big lips?</label>
+                <select name="bigLips" class="bigLips" id="bigLips">
+                    <option value="">--Please choose an option--</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+
+                <label for="bigNose">Does the person has big nose?</label>
+                <select name="bigNose" class="bigNose" id="bigNose">
+                    <option value="">--Please choose an option--</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+
+                <label for="doubleChin">Does the person has double chin?</label>
+                <select name="doubleChin" class="doubleChin" id="doubleChin">
+                    <option value="">--Please choose an option--</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+
+                <label for="eyeGlasses">Does the person has eye glasses?</label>
+                <select name="eyeGlasses" class="eyeGlasses" id="eyeGlasses">
+                    <option value="">--Please choose an option--</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+
+                <label for="male">Is the person a male?</label>
+                <select name="male" class="male" id="male">
+                    <option value="">--Please choose an option--</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+
+                <label for="beard">Does the person has beard?</label>
+                <select name="beard" class="beard" id="beard">
+                    <option value="">--Please choose an option--</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+
+                <label for="paleSkin">Does the person has pale skin?</label>
+                <select name="paleSkin" class="paleSkin" id="paleSkin">
+                    <option value="">--Please choose an option--</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+
+                <label for="recedingHairline">Does the person has receding hairline?</label>
+                <select name="recedingHairline" class="recedingHairline" id="recedingHairline">
+                    <option value="">--Please choose an option--</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+
+                <label for="age">How old is the person?</label>
+                <select name="age" class="age" id="age">
+                    <option value="">--Please choose an option--</option>
+                    <option value="young">young</option>
+                    <option value="old">old</option>
+                </select>
+                <input type="submit" value="Search" class="btn btn-primary btn-block">
+
+                <div class="custom-file mb-3">
+                    <hr>
+                    <% if(files){ %>
+                    <% files.forEach(function(file) { %>
+                        <div class="card card-body mb-3">
+                        <% if(file.isImage) { %>
+                            <img src="files/<%= file.filename %>" alt="">
+                            <% } else { %>
+                            <%= file.filename %>
+                                <% } %>
+                        </div>
+                        <% }) %>
+                        <% } else { %>
+                            <p>Not yet submitting a searching request</p>
+                            <% } %>
+                </div>
+            </form>
+        </div>
+
+        <div class="div">
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+                <div class="custom-file mb-3">
+                  <input type="file" name="file" id="file" class="custom-file-input">
+                  <label for="file" class="custom-file-label">Choose File</label>
+                </div>
+                <input type="submit" value="Submit" class="btn btn-primary btn-block">
+              </form>
+        </div>
+
+        
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

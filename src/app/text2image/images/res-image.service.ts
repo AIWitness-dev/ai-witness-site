@@ -20,7 +20,7 @@ export class ResImageService {
     //'http://bc98ad3b11fb.ngrok.io/predict?descriptions=a male in his 20s , black hair and eyebrows . '
     console.log('res image service triggered'); 
     console.log(queryTextMessage)
-    const url_ = 'http://8588f705c242.ngrok.io/predict?';
+    const url_ = 'http://f46bc08e9d88.ngrok.io/predict?';
     const httpParams = new HttpParams().set('descriptions', queryTextMessage)
     const URL = url_ + httpParams.toString();
     console.log(URL)

@@ -200,6 +200,6 @@ app.get('/image/:_id', (req, res) => {
 })
 
 const port = 5000;
-app.listen(port, () => {
+app.listen(port || process.env.PORT , () => {
     console.log(`Server started for uploading image!`)
 });
